@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnongLuto? - Filipino Recipe Finder</title>
+    <meta name="description" content="Find Filipino recipes based on ingredients you have at home.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-bowl-food"></i>
+                Anong<span>Luto?</span>
+            </a>
+            <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="find.html">Find Recipe</a>
+                <a href="recipes.html">All Recipes</a>
+                <a href="about.html">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <span class="hero-badge"><i class="fa-solid fa-fire"></i> Filipino Cuisine</span>
+            <h1>May ingredients ka na? <span>Lutuin na natin!</span></h1>
+            <p class="hero-tagline">Discover authentic Filipino recipes using ingredients you already have in your kitchen.</p>
+            <div class="hero-buttons">
+                <a href="find.html" class="btn btn-primary">
+                    <i class="fa-solid fa-magnifying-glass"></i> Find Recipe
+                </a>
+                <a href="recipes.html" class="btn btn-secondary">
+                    <i class="fa-solid fa-book-open"></i> Browse All
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>How It <span>Works</span></h2>
+                <p>Finding the perfect Filipino recipe is as easy as 1-2-3!</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <span class="step-number">01</span>
+                    <div class="step-icon">
+                        <i class="fa-solid fa-basket-shopping"></i>
+                    </div>
+                    <h3>Piliin ang Ingredients</h3>
+                    <p>Select the ingredients you have available in your kitchen from our organized categories.</p>
+                </div>
+                <div class="step-card">
+                    <span class="step-number">02</span>
+                    <div class="step-icon">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+                    <h3>I-click ang Find Recipe</h3>
+                    <p>Our smart matching algorithm will find recipes that use your selected ingredients.</p>
+                </div>
+                <div class="step-card">
+                    <span class="step-number">03</span>
+                    <div class="step-icon">
+                        <i class="fa-solid fa-utensils"></i>
+                    </div>
+                    <h3>Magluto na!</h3>
+                    <p>Follow the step-by-step instructions and enjoy your homemade Filipino dish!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Recipes Section -->
+    <section class="featured-recipes">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured <span>Recipes</span></h2>
+                <p>Handpicked Filipino favorites to inspire your next meal</p>
+            </div>
+            <div class="recipes-grid" id="featured-recipes-grid">
+                <!-- Recipes loaded dynamically via JavaScript -->
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="recipes.html" class="btn btn-outline">
+                    <i class="fa-solid fa-arrow-right"></i> View All Recipes
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <i class="fa-solid fa-bowl-food"></i>
+                    Anong<span>Luto?</span>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="find.html">Find Recipe</a>
+                    <a href="recipes.html">All Recipes</a>
+                    <a href="about.html">About</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>by <span>Group 1</span> | Batangas State University - CpET 245</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="recipes.js"></script>
+</body>
+</html>

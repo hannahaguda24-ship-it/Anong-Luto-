@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Recipes - AnongLuto?</title>
+    <meta name="description" content="Browse all Filipino recipes in our collection.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-bowl-food"></i>
+                Anong<span>Luto?</span>
+            </a>
+            <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="find.html">Find Recipe</a>
+                <a href="recipes.html" class="active">All Recipes</a>
+                <a href="about.html">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>All <span>Recipes</span></h1>
+            <p>Browse our complete collection of authentic Filipino dishes</p>
+        </div>
+    </header>
+
+
+    <!-- Search & Filter Section -->
+    <section class="find-section">
+        <div class="container">
+            <!-- Search Bar -->
+            <div class="search-bar">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="search-input" placeholder="Search recipes, ingredients, or categories..." oninput="liveSearch(this.value)">
+            </div>
+
+            <!-- Category Filters -->
+            <div class="category-filters">
+                <button class="filter-btn active" data-category="All" onclick="filterByCategory('All')">All</button>
+                <button class="filter-btn" data-category="Manok" onclick="filterByCategory('Manok')">Manok</button>
+                <button class="filter-btn" data-category="Baboy" onclick="filterByCategory('Baboy')">Baboy</button>
+                <button class="filter-btn" data-category="Isda" onclick="filterByCategory('Isda')">Isda</button>
+                <button class="filter-btn" data-category="Gulay" onclick="filterByCategory('Gulay')">Gulay</button>
+            
+                 <button class="filter-btn" data-category="Favorites" onclick="filterFavorites()">
+                    ❤️ Favorites
+                </button>
+            
+            </div>
+        </div>
+    </section>
+
+    <!-- Recipes Grid -->
+    <section class="featured-recipes" style="padding-top: 0;">
+        <div class="container">
+            <!-- No Results for Search -->
+            <div class="no-results" id="no-results-search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <h3>No recipes found</h3>
+                <p>Try searching with different keywords or browse by category.</p>
+            </div>
+
+            <div class="recipes-grid" id="all-recipes-grid">
+                <!-- All recipes loaded dynamically via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Recipe Modal -->
+    <div class="modal-overlay" id="recipe-modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeRecipeModal()">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <img src="" alt="" class="modal-img" id="modal-img">
+            <div class="modal-body" id="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <i class="fa-solid fa-bowl-food"></i>
+                    Anong<span>Luto?</span>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="find.html">Find Recipe</a>
+                    <a href="recipes.html">All Recipes</a>
+                    <a href="about.html">About</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>by <span>Group 1</span> | Batangas State University - CpET 245</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="recipes.js"></script>
+
+</body>
+</html>

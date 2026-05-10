@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Recipe - AnongLuto?</title>
+    <meta name="description" content="Find Filipino recipes based on the ingredients you have.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-bowl-food"></i>
+                Anong<span>Luto?</span>
+            </a>
+            <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="find.html" class="active">Find Recipe</a>
+                <a href="recipes.html">All Recipes</a>
+                <a href="about.html">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>Find Your <span>Perfect Recipe</span></h1>
+            <p>Select the ingredients you have and let us find the best Filipino dishes for you!</p>
+        </div>
+    </header>
+
+    <!-- Ingredient Selector -->
+    <section class="find-section">
+        <div class="container">
+            <div class="ingredient-selector">
+
+                <!-- 1. Ingredient checkboxes -->
+                <div id="ingredient-categories">
+                    <!-- Ingredient categories rendered dynamically via JavaScript -->
+                </div>
+
+                <!-- 2. Smart Suggestions — DITO, sa labas ng find-buttons -->
+                <div id="smart-suggestions"></div>
+
+                <!-- 3. Buttons -->
+                <div class="find-buttons">
+                    <button class="btn btn-primary" onclick="findRecipes()">
+                        <i class="fa-solid fa-magnifying-glass"></i> Find Recipe
+                    </button>
+                    <button class="btn btn-danger" onclick="clearAllIngredients()">
+                        <i class="fa-solid fa-trash-can"></i> Clear All
+                    </button>
+                    <button class="btn btn-green" onclick="suggestRandomUlam()">
+                        🍚 Random Ulam
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="results-section" id="results-section" style="display: none;">
+        <div class="container">
+            <div class="results-header">
+                <div class="results-count" id="results-count"></div>
+                <div class="sort-dropdown">
+                    <label for="sort-select"><i class="fa-solid fa-arrow-down-short-wide"></i> Sort by:</label>
+                    <select id="sort-select" onchange="sortResults()">
+                        <option value="match">Most Matched</option>
+                        <option value="time">Cooking Time</option>
+                        <option value="difficulty">Difficulty</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Loading Animation -->
+            <div class="loading-container" id="loading-container">
+                <div class="spinner"></div>
+                <p>Finding the best recipes for you...</p>
+            </div>
+
+            <!-- No Results -->
+            <div class="no-results" id="no-results">
+                <i class="fa-solid fa-plate-wheat"></i>
+                <h3>No recipes found</h3>
+                <p>Try selecting different ingredients or fewer items. Some recipes need specific combinations!</p>
+                <button class="btn btn-outline" onclick="clearAllIngredients()">
+                    <i class="fa-solid fa-rotate-left"></i> Try Again
+                </button>
+            </div>
+
+            <!-- Results Grid -->
+            <div class="recipes-grid" id="results-grid"></div>
+        </div>
+    </section>
+
+    <!-- Recipe Modal -->
+    <div class="modal-overlay" id="recipe-modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeRecipeModal()">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <img src="" alt="" class="modal-img" id="modal-img">
+            <div class="modal-body" id="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <i class="fa-solid fa-bowl-food"></i>
+                    Anong<span>Luto?</span>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="find.html">Find Recipe</a>
+                    <a href="recipes.html">All Recipes</a>
+                    <a href="about.html">About</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>by <span>Group 1</span> | Batangas State University - CpET 245</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="recipes.js"></script>
+</body>
+</html>
